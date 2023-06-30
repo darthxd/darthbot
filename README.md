@@ -1,0 +1,2 @@
+# darthbot
+ Simple discord bot
