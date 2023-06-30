@@ -1,2 +1,3 @@
 # darthbot
- Simple discord bot
+
+Simple discord bot, integrating OpenAI Api
