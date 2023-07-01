@@ -9,7 +9,9 @@ class statCheck(commands.Cog):
 
     @Slash_Command(name="stat", description="Check if bot is working well.")
     async def stat(self, Interaction: slashContext):
-        await Interaction.response.send_message(f"Hello {Interaction.author}! Bot is actually on!")
+        author = str(Interaction.author)
+        await Interaction.response.send_message(f"Hello {author[:-2]}! Bot is actually on!")
+        
 
 def setup(bot: commands.Bot):
     bot.add_cog(statCheck(bot))

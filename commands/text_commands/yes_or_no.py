@@ -9,7 +9,7 @@ class randomResp(commands.Cog):
         super().__init__()
 
     @CommandPrefix(name="random")
-    async def random(self, ctx: prefixContext, msg):
+    async def random(self, ctx: prefixContext, *, msg):
         chance = random.randint(0, 1)
         if(chance == 0):
             await ctx.reply('Não!')
