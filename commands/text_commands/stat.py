@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from discord import slash_command
 
 class statCheck(commands.Cog):
     def __init__(self, client: discord.Client) -> None:
