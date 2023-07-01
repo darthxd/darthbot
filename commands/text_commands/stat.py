@@ -1,16 +1,15 @@
 import discord
 from discord.ext import commands
-from discord import slash_command
 
 class statCheck(commands.Cog):
     def __init__(self, client: discord.Client) -> None:
         self.client = client
         super().__init__()
 
-    @discord.slash_command(name="stat", description="Check if bot is working well.")
-    async def stat(self, Interaction):
-        author = str(Interaction.author)
-        await Interaction.response.send_message(f"Hello {author[:-2]}! Bot is actually on!")
+    @commands.command(name="stat", description="Check if bot is working well.")
+    async def stat(self, ctx):
+        author = str(ctx.author)
+        await ctx.reply(f"Olá {author[:-2]}! O Bot está on!")
         
 
 def setup(bot: commands.Bot):

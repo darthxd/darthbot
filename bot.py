@@ -3,7 +3,7 @@ import os
 from decouple import config
 from discord.ext import commands
 
-client = commands.Bot(intents=discord.Intents.all(), command_prefix=".")
+client = commands.Bot(intents=discord.Intents.all(), command_prefix=".", help_command=commands.MinimalHelpCommand())
 
 for filename in os.listdir("./commands/events"):
     if filename.endswith(".py") and not filename.startswith("__"):

@@ -7,7 +7,7 @@ class randomResp(commands.Cog):
         self.client = client
         super().__init__()
 
-    @commands.command(name="random")
+    @commands.command(name="random", description="Gera uma resposta aleatória de 'sim' ou 'não'!")
     async def random(self, ctx, *, msg):
         chance = random.randint(0, 1)
         if(chance == 0):

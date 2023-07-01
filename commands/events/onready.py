@@ -9,7 +9,7 @@ class botStart(commands.Cog):
     @commands.Cog.listener()
     async def on_ready(self):
         print(f'Bot on! Logged as {self.client.user}!')
-        await self.client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Bot On! Criado por darthxd!"))
+        await self.client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='Bot On! Prefixo: "."!'))
 
 def setup(bot: commands.Bot):
     bot.add_cog(botStart(bot))
