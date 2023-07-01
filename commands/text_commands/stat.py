@@ -7,7 +7,7 @@ class statCheck(commands.Cog):
         super().__init__()
 
     @discord.slash_command(name="stat", description="Check if bot is working well.")
-    async def stat(self, Interaction: discord.Interaction):
+    async def stat(self, Interaction):
         author = str(Interaction.author)
         await Interaction.response.send_message(f"Hello {author[:-2]}! Bot is actually on!")
         

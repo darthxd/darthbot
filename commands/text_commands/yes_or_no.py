@@ -8,7 +8,7 @@ class randomResp(commands.Cog):
         super().__init__()
 
     @commands.command(name="random")
-    async def random(self, ctx: discord.Interaction, *, msg):
+    async def random(self, ctx, *, msg):
         chance = random.randint(0, 1)
         if(chance == 0):
             await ctx.reply('Não!')

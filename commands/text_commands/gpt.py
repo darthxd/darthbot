@@ -9,7 +9,7 @@ class gptMsg(commands.Cog):
         super().__init__()
 
     @commands.command(name="gpt")
-    async def random(self, ctx: discord.Interaction, *, msg: str):
+    async def random(self, ctx, *, msg: str):
         openai.api_key = config('API_KEY')
         messages = [ {"role": "system", "content": "Você é um assistente pessoal de um servidor do discord."} ]
         author = str(ctx.author)
