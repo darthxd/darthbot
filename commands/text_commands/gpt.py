@@ -12,8 +12,9 @@ class gptMsg(commands.Cog):
     @CommandPrefix(name="gpt")
     async def random(self, ctx: prefixContext, *, msg: str):
         openai.api_key = config('API_KEY')
-        messages = [ {"role": "system", "content": "Você é um assistente pessoal."} ]
-        message = msg
+        messages = [ {"role": "system", "content": "Você é um assistente pessoal de um servidor do discord."} ]
+        author = str(ctx.author)
+        message = (f"Olá chatgpt. Eu sou o {author[:-2]}. {msg}")
         messages.append(
             {"role": "user", "content": message},
         )
