@@ -1,5 +1,4 @@
 import discord
-from NewFunctionsPYC import CommandPrefix, prefixContext
 from discord.ext import commands
 import openai
 from decouple import config
@@ -9,8 +8,8 @@ class gptMsg(commands.Cog):
         self.client = client
         super().__init__()
 
-    @CommandPrefix(name="gpt")
-    async def random(self, ctx: prefixContext, *, msg: str):
+    @commands.command(name="gpt")
+    async def random(self, ctx: discord.Interaction, *, msg: str):
         openai.api_key = config('API_KEY')
         messages = [ {"role": "system", "content": "Você é um assistente pessoal de um servidor do discord."} ]
         author = str(ctx.author)

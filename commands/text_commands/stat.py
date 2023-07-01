@@ -1,5 +1,4 @@
 import discord
-from NewFunctionsPYC import Slash_Command, slashContext
 from discord.ext import commands
 
 class statCheck(commands.Cog):
@@ -7,8 +6,8 @@ class statCheck(commands.Cog):
         self.client = client
         super().__init__()
 
-    @Slash_Command(name="stat", description="Check if bot is working well.")
-    async def stat(self, Interaction: slashContext):
+    @discord.slash_command(name="stat", description="Check if bot is working well.")
+    async def stat(self, Interaction: discord.Interaction):
         author = str(Interaction.author)
         await Interaction.response.send_message(f"Hello {author[:-2]}! Bot is actually on!")
         

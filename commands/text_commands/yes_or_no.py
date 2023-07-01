@@ -1,5 +1,4 @@
 import discord
-from NewFunctionsPYC import CommandPrefix, prefixContext
 from discord.ext import commands
 import random
 
@@ -8,8 +7,8 @@ class randomResp(commands.Cog):
         self.client = client
         super().__init__()
 
-    @CommandPrefix(name="random")
-    async def random(self, ctx: prefixContext, *, msg):
+    @commands.command(name="random")
+    async def random(self, ctx: discord.Interaction, *, msg):
         chance = random.randint(0, 1)
         if(chance == 0):
             await ctx.reply('Não!')

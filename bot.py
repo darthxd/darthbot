@@ -1,14 +1,17 @@
 import discord
-import NewFunctionsPYC
+import os
 from decouple import config
 from discord.ext import commands
 
-intents = discord.Intents.default()
-intents.message_content = True
+client = commands.Bot(intents=discord.Intents.all(), command_prefix=".")
 
-client = NewFunctionsPYC.Client(token=config('TOKEN'), poweredby=False, command_prefix=".")
+for filename in os.listdir("./commands/events"):
+    if filename.endswith(".py") and not filename.startswith("__"):
+        client.load_extension(f"commands.events.{filename[:-3]}")
 
-client.load_cogs('./commands/events')
-client.load_cogs('./commands/text_commands')
+for filename in os.listdir("./commands/text_commands"):
+    if filename.endswith(".py") and not filename.startswith("__"):
+        client.load_extension(f"commands.text_commands.{filename[:-3]}")
 
-client.__run__()
+token = config("TOKEN")
+client.run(token)

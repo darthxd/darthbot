@@ -1,5 +1,4 @@
 import discord
-from NewFunctionsPYC import Slash_Command, slashContext
 from discord.ext import commands
 
 class botStart(commands.Cog):
